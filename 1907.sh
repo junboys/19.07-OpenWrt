@@ -9,7 +9,7 @@
 
 
 # 修改openwrt登陆地址,把下面的192.168.2.2修改成你想要的就可以了
-sed -i 's/192.168.1.1/192.168.2.2/g' ./package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.2.1/g' ./package/base-files/files/bin/config_generate
 
 
 # 修改主机名字，把OpenWrt-123修改你喜欢的就行（不能纯数字或者使用中文）
@@ -35,6 +35,8 @@ git clone https://github.com/garypang13/luci-app-eqos.git package/diy/luci-app-e
 git clone https://github.com/jerrykuku/node-request.git package/diy/node-request  #京东签到依赖
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/diy/luci-app-jd-dailybonus  #京东签到
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-filetransfer package/diy/luci-app-filetransfer  #文件传输（可用于安装IPK）
+git clone https://github.com/jefferymvp/luci-app-koolproxyR package/lean/luci-app-koolproxyR #KPR
+
 
 
 #使用LEDE的ShadowSocksR Plus+出国软件 (源码自带passwall出国软件)
