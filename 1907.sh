@@ -35,9 +35,8 @@ git clone https://github.com/garypang13/luci-app-eqos.git package/diy/luci-app-e
 git clone https://github.com/jerrykuku/node-request.git package/diy/node-request  #京东签到依赖
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/diy/luci-app-jd-dailybonus  #京东签到
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-filetransfer package/diy/luci-app-filetransfer  #文件传输（可用于安装IPK）
-git clone https://github.com/jefferymvp/luci-app-koolproxyR package/lean/luci-app-koolproxyR #KPR
-
-
+git clone https://github.com/jefferymvp/luci-app-koolproxyR package/diy/luci-app-koolproxyR #KPR
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-accesscontrol package/diy/luci-app-accesscontrol #访问时间控制
 
 #使用LEDE的ShadowSocksR Plus+出国软件 (源码自带passwall出国软件)
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/diy/luci-app-ssr-plus
