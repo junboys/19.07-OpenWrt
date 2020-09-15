@@ -18,6 +18,11 @@ sed -i 's/OpenWrt/Phicomm-K3/g' ./package/base-files/files/bin/config_generate
 # 只编译k3固件
 sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm-k3|TARGET_DEVICES += phicomm-k3|' ./target/linux/bcm53xx/image/Makefile
 
+# K3屏幕
+git clone https://github.com/lwz322/luci-app-k3screenctrl.git package/k3/luci-app-k3screenctrl
+rm -rf ./package/lean/k3screenctrl && git clone https://github.com/lwz322/k3screenctrl.git package/k3/k3screenctrl
+git clone https://github.com/lwz322/k3screenctrl_build.git package/k3/k3screenctrl_build
+
 
 # 修改 banne 文件（不要修改此行代码,修改错误怕弄的diy-lede.sh文件失效,不需要的话前面加#，或者全行代码删除了）
 rm -rf ./package/base-files/files/etc/banne && cd .. && cp -f ./banner openwrt/package/base-files/files/etc/ && cd openwrt
@@ -43,7 +48,7 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-accessco
 
 #使用LEDE的ShadowSocksR Plus+出国软件 (源码自带passwall出国软件)
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/diy/luci-app-ssr-plus
-svn co https://github.com/fw876/helloworld/trunk/tcping package/diy/tcpping
+svn co https://github.com/fw876/helloworld/trunk/tcping package/diy/tcping
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/shadowsocksr-libev package/diy/shadowsocksr-libev
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/pdnsd-alt package/diy/pdnsd-alt
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/microsocks package/diy/microsocks
