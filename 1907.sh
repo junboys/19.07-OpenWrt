@@ -15,6 +15,9 @@ sed -i 's/192.168.1.1/192.168.2.1/g' ./package/base-files/files/bin/config_gener
 # 修改主机名字，把OpenWrt-123修改你喜欢的就行（不能纯数字或者使用中文）
 sed -i 's/OpenWrt/Phicomm-K3/g' ./package/base-files/files/bin/config_generate
 
+# 只编译k3固件
+sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm-k3|TARGET_DEVICES += phicomm-k3|' ./target/linux/bcm53xx/image/Makefile
+
 
 # 修改 banne 文件（不要修改此行代码,修改错误怕弄的diy-lede.sh文件失效,不需要的话前面加#，或者全行代码删除了）
 rm -rf ./package/base-files/files/etc/banne && cd .. && cp -f ./banner openwrt/package/base-files/files/etc/ && cd openwrt
